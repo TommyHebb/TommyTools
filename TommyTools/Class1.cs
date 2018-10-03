@@ -12,7 +12,7 @@ namespace TommyTools
         {
             bool result = false;
             Console.WriteLine("Execute exercise '{0}'? (y/other) ", exercise);
-            if ((char)Console.Read() == 'y') result = true;
+            if (Console.ReadLine() == "y") result = true;
             return result;
         }
         public static void Devider(char sign = '=', int length = 120)
