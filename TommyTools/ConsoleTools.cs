@@ -10,6 +10,7 @@ namespace TommyTools
     {
         public static bool Run(string exercise)
         {
+            Devider();
             bool result = false;
             Console.WriteLine("Execute exercise '{0}'? (y/other) ", exercise);
             if (Console.ReadLine() == "y") result = true;
