@@ -23,9 +23,9 @@ namespace TommyTools
             int[] exercisesArray = new int[0];
             int[] oldExercisesArray = new int[1];
             bool isNumber;
-            Console.WriteLine("Execute specific exercises? (next exercisenumber/other) ");
             do
             {
+                Console.WriteLine("Execute specific exercises? (next exercisenumber/other) ");
                 isNumber = int.TryParse(Console.ReadLine(), out int result);
                 if (isNumber)
                 {
@@ -41,19 +41,25 @@ namespace TommyTools
                         {
                             exercisesArray[index] = oldExercisesArray[index];
                         }
-                        exercisesArray[count] = result;
+                        exercisesArray[count - 1] = result;
                     }
+                    oldExercisesArray = new int[exercisesArray.Count()];
                     for (int index = 0; index < exercisesArray.Count(); index++)
                     {
                         oldExercisesArray[index] = exercisesArray[index];
+                        Console.WriteLine("Exercise '{0}' will be executed", exercisesArray[index]);
                     }
                 }
                 else
                 {
-                    if (count == 0)
+                    if ((count <= 1) && (exercisesArray[0] == 0))
                     {
-                        exercisesArray = new int[1];
-                        exercisesArray[0] = 0;
+                        if (count == 0)
+                        {
+                            exercisesArray = new int[1];
+                            exercisesArray[0] = 0;
+                        }
+                        Console.WriteLine("All exercises will be presented for execution");
                     }
                 }
             }
