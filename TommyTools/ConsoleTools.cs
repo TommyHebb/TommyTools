@@ -47,18 +47,22 @@ namespace TommyTools
                     for (int index = 0; index < exercisesArray.Count(); index++)
                     {
                         oldExercisesArray[index] = exercisesArray[index];
-                        Console.WriteLine("Exercise '{0}' will be executed", exercisesArray[index]);
+                        if (exercisesArray[index] != 0)
+                        {
+                            Console.WriteLine("Exercise '{0}' will be executed", exercisesArray[index]);
+                        }
                     }
                 }
                 else
                 {
-                    if ((count <= 1) && (exercisesArray[0] == 0))
+                    if (count <= 0)
                     {
-                        if (count == 0)
-                        {
-                            exercisesArray = new int[1];
-                            exercisesArray[0] = 0;
-                        }
+                        exercisesArray = new int[1];
+                        exercisesArray[0] = 0;
+                        Console.WriteLine("All exercises will be presented for execution");
+                    }
+                    else if ((count == 1) && (exercisesArray[0] == 0))
+                    {
                         Console.WriteLine("All exercises will be presented for execution");
                     }
                 }
