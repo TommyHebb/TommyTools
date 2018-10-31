@@ -8,6 +8,14 @@ namespace TommyTools
 {
     public class ConsoleTools
     {
+        public static int GetSpecificExerciseToRun()
+        {
+            Devider();
+            Console.WriteLine("Execute specific exercise? (exercisenumber/other) ");
+            bool isNumber = int.TryParse(Console.ReadLine(), out int result);
+            if (isNumber == false) result = 0;
+            return result;
+        }
         public static bool Run(string exercise)
         {
             Devider();
