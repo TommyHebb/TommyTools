@@ -16,18 +16,26 @@ namespace TommyToolsTest
         }
 
         [TestMethod]
-        public void ReturnsAtLeastCount1()
+        public void Test001IfEmptyGivenArrayReturnsArrayWithExerciseNumber()
         {
+            int exerciseNumber = 5;
             int[] givenArray = new int[0];
-            Assert.AreEqual(1, consoleTools.AddExerciseNumberToGivenArrayAndGiveBackNewArray(0, givenArray).Length);
+            int[] resultArray = consoleTools.AddExerciseNumberToGivenArrayAndGiveBackNewArray(exerciseNumber, givenArray);
+            Assert.AreEqual(exerciseNumber, resultArray[0]);
+            Assert.AreEqual(1, resultArray.Length);
         }
-        
+
         [TestMethod]
-        public void IfExerciseNumber0AndEmptyGivenArrayReturnsArrayWith0()
+        public void Test002IfFilledGivenArrayReturnsGivenArrayWithExerciseNumberAdded()
         {
-            int[] givenArray = new int[0];
-            Assert.AreEqual(0, consoleTools.AddExerciseNumberToGivenArrayAndGiveBackNewArray(0, givenArray)[0]);
+            int exerciseNumber = 5;
+            int[] givenArray = new int[3];
+            givenArray[0] = 1;
+            givenArray[1] = 2;
+            givenArray[2] = 3;
+            int[] resultArray = consoleTools.AddExerciseNumberToGivenArrayAndGiveBackNewArray(exerciseNumber, givenArray);
+            Assert.AreEqual(exerciseNumber, resultArray[3]);
+            Assert.AreEqual(4, resultArray.Length);
         }
-        
     }
 }
