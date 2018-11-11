@@ -8,6 +8,29 @@ namespace TommyTools
 {
     public class ConsoleTools
     {
+        public int[] AddExerciseNumberToGivenArrayAndGiveBackNewArray(int exerciseNumber, int[] givenArray)
+        {
+            int[] newArray = new int[0];
+
+            if (exerciseNumber != 0)
+            {
+
+            }
+            else
+            {
+                if (givenArray.Length == 0)
+                {
+                    newArray = new int[1];
+                    newArray[0] = 0;
+                }
+                else
+                {
+                    newArray = givenArray;
+                }
+            }
+
+            return newArray;
+        }
         public static int GetSpecificExerciseToRun()
         {
             Devider();
