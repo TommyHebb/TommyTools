@@ -29,61 +29,6 @@ namespace TommyTools
             if (isNumber == false) result = 0;
             return result;
         }
-        public static int[] GetSpecificExercisesToRun()
-        {
-            Devider();
-            int count = 0;
-            int[] exercisesArray = new int[0];
-            int[] oldExercisesArray = new int[1];
-            bool isNumber;
-            do
-            {
-                Console.WriteLine("Execute specific exercises? (next exercisenumber/other) ");
-                isNumber = int.TryParse(Console.ReadLine(), out int result);
-                if (isNumber)
-                {
-                    count++;
-                    exercisesArray = new int[count];
-                    if (count == 1)
-                    {
-                        exercisesArray[0] = result;
-                    }
-                    else
-                    {
-                        for (int index = 0; index < oldExercisesArray.Count(); index++)
-                        {
-                            exercisesArray[index] = oldExercisesArray[index];
-                        }
-                        exercisesArray[count - 1] = result;
-                    }
-                    oldExercisesArray = new int[exercisesArray.Count()];
-                    for (int index = 0; index < exercisesArray.Count(); index++)
-                    {
-                        oldExercisesArray[index] = exercisesArray[index];
-                        if (exercisesArray[index] != 0)
-                        {
-                            Console.WriteLine("Exercise '{0}' will be executed", exercisesArray[index]);
-                        }
-                    }
-                }
-                else
-                {
-                    if (count <= 0)
-                    {
-                        exercisesArray = new int[1];
-                        exercisesArray[0] = 0;
-                        Console.WriteLine("All exercises will be presented for execution");
-                    }
-                    else if ((count == 1) && (exercisesArray[0] == 0))
-                    {
-                        Console.WriteLine("All exercises will be presented for execution");
-                    }
-                }
-            }
-            while (isNumber);
-
-            return exercisesArray;
-        }
         public static bool Run(string exercise)
         {
             Devider();
