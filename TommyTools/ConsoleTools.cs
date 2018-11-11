@@ -10,17 +10,14 @@ namespace TommyTools
     {
         public int[] AddExerciseNumberToGivenArrayAndGiveBackNewArray(int exerciseNumber, int[] givenArray)
         {
-            int[] newArray = new int[0];
+            int arrayLength = givenArray.Length;
+            int[] newArray = new int[arrayLength + 1];
 
-            if (givenArray.Length == 0)
+            for (int index = 0; index < arrayLength; index++)
             {
-                newArray = new int[1];
-                newArray[0] = exerciseNumber;
+                newArray[index] = givenArray[index];
             }
-            else
-            {
-                newArray = givenArray;
-            }
+            newArray[arrayLength] = exerciseNumber;
 
             return newArray;
         }
