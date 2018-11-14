@@ -24,7 +24,6 @@ namespace TommyTools
             foreach (var clss in exercisesArray)
             {
                 myExercise = Activator.CreateInstance(clss);
-                Console.WriteLine("myExercise: '{0}' ", myExercise.GetType());
                 myClassesArray[index] = myExercise;
                 index++;
                 Console.WriteLine(myExercise.ToString());
