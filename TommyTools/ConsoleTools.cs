@@ -11,7 +11,7 @@ namespace TommyTools
     {
         public object[] GetObjectArrayOfClasses(string nmspace, string classesStartingWith)
         {
-            var exercisesArray = from target in Assembly.GetExecutingAssembly().GetTypes()
+            var exercisesArray = from target in Assembly.GetCallingAssembly().GetTypes()
                                  where target.IsClass && target.Namespace == nmspace && target.Name.StartsWith(classesStartingWith)
                                  orderby target.Name
                                  select target;
