@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,29 @@ namespace TommyTools
 {
     public class ConsoleTools
     {
+        public object[] GetObjectArrayOfClasses(string nmspace, string classesStartingWith)
+        {
+            var exercisesArray = from target in Assembly.GetExecutingAssembly().GetTypes()
+                                 where target.IsClass && target.Namespace == nmspace && target.Name.StartsWith(classesStartingWith)
+                                 orderby target.Name
+                                 select target;
+            exercisesArray.ToArray();
+
+            Object[] myClassesArray = new object[exercisesArray.Count()];
+            Object myExercise;
+            int index = 0;
+
+            foreach (var clss in exercisesArray)
+            {
+                myExercise = Activator.CreateInstance(clss);
+                myClassesArray[index] = myExercise;
+                index++;
+                Console.WriteLine(myExercise.ToString());
+            }
+            Console.WriteLine();
+
+            return myClassesArray;
+        }
         public int[] AddExerciseNumberToGivenArrayAndGiveBackNewArray(int exerciseNumber, int[] givenArray)
         {
             int arrayLength = givenArray.Length;
