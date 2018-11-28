@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayTools.cs" />
+    <Compile Include="BaseExercise.cs" />
     <Compile Include="ConsoleTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
