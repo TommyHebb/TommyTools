@@ -11,6 +11,11 @@ namespace TommyTools
 
         public abstract void Exec();
 
+        sealed public override string ToString()
+        {
+            return string.Format(string.Format("Oefening: {0, 3} - {1} ", Number, Name));
+        }
+
         public void NeedsExecution(int[] exerciseNumbersThatNeedExecution)
         {
             if (exerciseNumbersThatNeedExecution.Contains(Number))
