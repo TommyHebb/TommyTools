@@ -16,8 +16,9 @@ namespace TommyTools
             if (exerciseNumbersThatNeedExecution.Contains(Number))
             {
                 ConsoleTools.Devider();
-                Console.WriteLine("Executing exercise {0}... ", Number);
-                ConsoleTools.Devider('-', 25);
+                Console.WriteLine("Ready to execute exercise {0}. Press ENTER to continue... ", Number);
+                ConsoleTools.Devider('-', 60);
+                Console.ReadLine();
                 Exec();
             }
         }
