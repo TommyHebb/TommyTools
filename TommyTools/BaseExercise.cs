@@ -11,9 +11,14 @@ namespace TommyTools
 
         public abstract void Exec();
 
+        public int GetNumber()
+        {
+            return Number;
+        }
+
         sealed public override string ToString()
         {
-            return string.Format(string.Format("Oefening: {0, 3} - {1} ", Number, Name));
+            return string.Format("Oefening: {0, 3} - {1} ", Number, Name);
         }
 
         public void NeedsExecution(int[] exerciseNumbersThatNeedExecution)
