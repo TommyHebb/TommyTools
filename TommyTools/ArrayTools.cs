@@ -54,30 +54,6 @@ namespace TommyTools
             newArray[arrayLength] = exerciseNumber;
 
             return newArray;
-            /* NEEDS FOLLOWING CODE TO BE USED IN IMPLEMENTATION CLASS IF CONSOLE APPLICATION:
-            ConsoleTools consoleTools = new ConsoleTools();
-            int[] exercisesToRun = new int[0];
-            bool isNumber;
-            
-            do
-            {
-                Console.WriteLine("Please enter the exercise you wish to run... (0 is not valid) ");
-                isNumber = int.TryParse(Console.ReadLine(), out int result);
-                if (isNumber && result != 0)
-                {
-                    exercisesToRun = consoleTools.AddExerciseNumberToGivenArrayAndGiveBackNewArray(result, exercisesToRun);
-                    Console.Write("Exercise {0} added to list. ", result);
-                }
-            }
-            while (isNumber);
-            
-            Console.WriteLine();
-            
-            foreach (Exercise exercise in exercises)
-            {
-                exercise.NeedsExecution(exercisesToRun);
-            }
-            */
         }
     }
 }
